@@ -23,6 +23,10 @@ module.exports = {
                     'style-loader',
                     'css-loader',
                     'sass-loader',
+                    {
+                        loader: 'sass-resources-loader',
+                        options: { resources: path.resolve(__dirname, '../src/styles/vars.scss') },
+                    },
                 ],
             },
         ],
@@ -30,6 +34,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../public/index.html'),
+            favicon: path.resolve(__dirname, '../public/logo.png'),
         }),
     ],
     resolve: {

@@ -1,0 +1,16 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $header-height;
+    line-height: $header-height;
+    padding-left: 100px;
+    border-bottom: 1px solid $gray;
+    background-color: $light;
+    font-size: 20px;
+}
+
+.header-next {
+    height: $header-height;
+    background-color: transparent;
+}
