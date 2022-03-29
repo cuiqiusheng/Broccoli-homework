@@ -9,9 +9,9 @@
   <img src="https://img.shields.io/badge/react-17.0.2-yellow.svg" alt="LISENCE" data-canonical-src="https://img.shields.io/badge/react-17.5.2-yellow.svg" style="max-width:100%;">
 </p>
 
-> Don't panic!
+> Always believe yourself 😊
 
-## 目录结构说
+## 目录结构
 
 ```
 .
