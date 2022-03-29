@@ -1,0 +1,28 @@
+body,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+pre {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'PingFangSC-Light';
+    font-size: 14px;
+}
+
+li {
+    list-style: none;
+}
+
+:global(.clearfix:after) {
+    display: block;
+    content: '';
+    clear: both;
+}
