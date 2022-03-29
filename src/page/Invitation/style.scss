@@ -1,0 +1,22 @@
+.content {
+    @extend %flex-middle;
+    height: calc(100% - $header-height - $footer-height);
+}
+
+.slogan,
+.subheading,
+.request-button {
+    text-align: center;
+}
+
+.slogan {
+    letter-spacing: 2px;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.subheading {
+    margin: 24px 0;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,13 @@
+.button {
+    display: inline-block;
+    margin: 0;
+    padding: 16px 20px;
+    border: 1px solid $primary;
+    border-radius: 0;
+    background-color: $light;
+    outline: none;
+    color: $primary;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}

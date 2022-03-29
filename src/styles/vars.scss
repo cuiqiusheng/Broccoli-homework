@@ -13,7 +13,14 @@ $header-height: 70px;
 $footer-height: 70px;
 
 %form-font {
-  font-size: 14px;
-  font-weight: 500;
-  color: $primary;
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary;
+}
+
+%flex-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
