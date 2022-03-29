@@ -1,0 +1,13 @@
+.input-field {
+    padding-bottom: 8px;
+    
+    .input-block {
+        display: block;
+        width: 100%;
+    }
+    
+    .error-message {
+        color: $error;
+        font-size: 12px;
+    }
+}

@@ -1,13 +1,22 @@
 .button {
     display: inline-block;
     margin: 0;
-    padding: 16px 20px;
+    padding: 6px 14px;
     border: 1px solid $primary;
     border-radius: 0;
     background-color: $light;
     outline: none;
     color: $primary;
-    font-size: 16px;
-    letter-spacing: 1px;
+    font-size: 14px;
     cursor: pointer;
+
+    &.large-button {
+        padding: 16px 20px;
+        letter-spacing: 1px;
+        font-size: 16px;
+    }
+
+    &.small-button {
+        padding: 4px 8px;
+    }
 }

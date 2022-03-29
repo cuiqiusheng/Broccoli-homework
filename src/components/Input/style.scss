@@ -1,0 +1,24 @@
+.input {
+    padding: 8px;
+    border: 1px solid $primary;
+    background: $light;
+    color: $primary;
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #c1c1c1;
+    }
+    &:-ms-input-placeholder { // IE10+
+        color: #c1c1c1;
+    }
+    &:-moz-placeholder { // Firefox4-18
+        color: #c1c1c1;
+    }
+    &::-moz-placeholder { // Firefox19+
+        color: #c1c1c1;
+    }
+}

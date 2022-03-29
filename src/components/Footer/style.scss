@@ -1,6 +1,7 @@
 .footer {
     @extend %flex-middle;
     position: fixed;
+    z-index: 99;
     bottom: 0;
     width: 100%;
     height: $footer-height;
