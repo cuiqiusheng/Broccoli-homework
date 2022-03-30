@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Button from '../../../../components/Button'
-import Popup from '../../../../components/Popup'
+import Button from '@/components/Button'
+import Popup from '@/components/Popup'
 
-import '../../style.scss'
+import '@/page/Invitation/style.scss'
 
 interface DonePopupProps {
     visible: boolean

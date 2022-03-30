@@ -35,13 +35,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../public/index.html'),
             favicon: path.resolve(__dirname, '../public/logo.png'),
+            filename: 'index.html',
         }),
     ],
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
-        alias: Object.keys(aliasPath).reduce((alias, key) => {
-            alias[key] = path.resolve(aliasPath[key][0]) + ''
-            return alias
-        }, {})
+        alias: {
+            '@': path.resolve(__dirname, '../src/'),
+        }
     },
 }

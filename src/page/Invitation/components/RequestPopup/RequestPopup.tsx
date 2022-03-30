@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios, { AxiosResponse } from 'axios'
 
-import Button from '../../../../components/Button'
-import Popup from '../../../../components/Popup'
-import InputField from '../../../../components/InputField'
-import { validate, handleRes, ResResult } from '../../../../utils'
+import Button from '@/components/Button'
+import Popup from '@/components/Popup'
+import InputField from '@/components/InputField'
+import { validate, handleRes, ResResult } from '@/utils'
 
-import '../../style.scss'
+import '@/page/Invitation/style.scss'
 
 const URL = 'https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth'
 
