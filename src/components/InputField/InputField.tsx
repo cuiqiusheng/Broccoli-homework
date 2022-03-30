@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import Input, { InputProps } from '@/components/Input'
 
@@ -16,7 +17,7 @@ function InputField({
     return (
         <div className="input-field">
             <Input
-                className={`input-block ${errorMessage ? 'error-input' : ''} ${className}`}
+                className={classNames('input-block', { 'error-input': errorMessage }, className)}
                 { ...inputProps }
             />
             <div className="error-message">{ errorMessage }</div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import './style.scss'
 
@@ -18,23 +19,6 @@ function Button({
     onClick,
 }: LayoutProps) {
 
-    const getSizeClass = () => {
-        let result = 'button '
-
-        switch (size) {
-            case 'large':
-                result += ' large-button '
-                break
-            case 'small':
-                result += ' small-button '
-                break
-            default:
-                result += ' medium-button '
-        }
-        
-        return result
-    }
-
     const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
         if (disabled) {
             e.preventDefault()
@@ -44,7 +28,15 @@ function Button({
     }
 
     return (
-        <button className={`${getSizeClass()} ${className}`} disabled={disabled} onClick={handleClick}>
+        <button
+            className={classNames('button', {
+                'large-button': size === 'large',
+                'small-button': size === 'small',
+                'medium-button': size === 'medium' || !size,
+            }, className)}
+            disabled={disabled}
+            onClick={handleClick}
+        >
             { children }
         </button>
     )

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
+import classNames from 'classnames'
 
 import './style.scss'
 
@@ -50,9 +51,9 @@ const Popup = ({
     }
 
     return ReactDOM.createPortal(
-        <div className={`popup ${wrapClassName}`} onTransitionEnd={onTransitionEnd}>
+        <div className={classNames('popup', wrapClassName)} onTransitionEnd={onTransitionEnd}>
             <div className="popup-mask"></div>
-            <div className={`popup-content ${aniClassName} ${bodyClassName}`}>
+            <div className={classNames('popup-content', aniClassName, bodyClassName)}>
                 { children }
                 { closable && <div className="popup-close-btn" onClick={onClose}>×</div> }
             </div>

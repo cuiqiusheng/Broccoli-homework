@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import './style.scss'
 
@@ -23,7 +24,7 @@ function Input({
 }: InputProps) {
     return (
         <input
-            className={`input ${className}`}
+            className={classNames('input', className)}
             placeholder={placeholder || defaultProps.placeholder}
             value={value}
             disabled={disabled}
