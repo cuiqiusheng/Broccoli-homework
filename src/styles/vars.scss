@@ -6,17 +6,11 @@ $success: #52c41a;
 $error: #f5222d;
 
 $normal-margin: 16px;
-$lg-margin: 24px;
+$lg-margin: 32px;
 $sm-margin: 8px;
 
 $header-height: 70px;
 $footer-height: 70px;
-
-%form-font {
-    font-size: 14px;
-    font-weight: 500;
-    color: $primary;
-}
 
 %flex-middle {
     display: flex;

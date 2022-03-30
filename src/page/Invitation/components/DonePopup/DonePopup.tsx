@@ -17,10 +17,16 @@ function DonePopup({
     onOk,
 }: DonePopupProps) {
 
+    /**
+     * on OK button tap
+     */
     const handleOk = async () => {
         onOk && onOk()
     }
 
+    /**
+     * on popup close
+     */
     const handleClose = () => {
         onClose && onClose()
     }

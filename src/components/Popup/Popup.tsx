@@ -4,12 +4,12 @@ import ReactDOM from 'react-dom'
 import './style.scss'
 
 interface PopupProps {
-    visible: boolean;
-    onClose?: () => void;
-    children?: any;
+    visible: boolean
+    children?: any
     wrapClassName?: string
     bodyClassName?: string
     closable?: boolean
+    onClose?: () => void
 }
 
 const Popup = ({

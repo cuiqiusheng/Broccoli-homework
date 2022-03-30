@@ -12,7 +12,6 @@ export interface InputProps {
 
 export const defaultProps = {
     placeholder: 'input here',
-    disabled: false,
 }
 
 function Input({

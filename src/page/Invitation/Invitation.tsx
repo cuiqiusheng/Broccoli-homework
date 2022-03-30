@@ -13,6 +13,9 @@ function Invitation() {
     const [requestPopupVisible, setRequestPopupVisible] = useState<boolean>(false);
     const [donePopupVisible, setDonePopupVisible] = useState<boolean>(false);
 
+    /**
+     * when request success, close request popup, open confirm popup
+     */
     const handleRequestPopupOk = () => {
         setRequestPopupVisible(false)
         setDonePopupVisible(true)

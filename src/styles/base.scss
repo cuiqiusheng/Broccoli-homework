@@ -25,9 +25,3 @@ li {
 * {
     box-sizing: border-box;
 }
-
-:global(.clearfix:after) {
-    display: block;
-    content: '';
-    clear: both;
-}

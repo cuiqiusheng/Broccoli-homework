@@ -17,28 +17,32 @@ function Button({
     disabled,
     onClick,
 }: LayoutProps) {
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
-        if (disabled) {
-            e.preventDefault();
-            return;
-        }
-        (onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)?.(e);
-    };
 
     const getSizeClass = () => {
         let result = 'button '
 
-        if (disabled) result += ' disabled-button '
-
-        if (size === 'large') {
-            result += ' large-button '
-        } else if (size === 'small') {
-            result += ' small-button '
-        } else {
-            result += ' medium-button '
+        switch (size) {
+            case 'large':
+                result += ' large-button '
+                break
+            case 'small':
+                result += ' small-button '
+                break
+            default:
+                result += ' medium-button '
         }
+
+        if (disabled) result += ' disabled-button '
         
         return result
+    }
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
+        if (disabled) {
+            e.preventDefault()
+            return
+        }
+        (onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)?.(e)
     }
 
     return (

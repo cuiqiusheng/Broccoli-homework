@@ -10,6 +10,17 @@ import '@/page/Invitation/style.scss'
 
 const URL = 'https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth'
 
+interface FormFields {
+    name: string
+    email: string
+    confirmEmail: string
+}
+
+interface ValidateResult {
+    success: boolean
+    error: FormFields
+}
+
 interface RequestPopupProps {
     visible: boolean
     onClose?: Function
@@ -35,6 +46,10 @@ function RequestPopup({
         resetFields()
     }, [visible])
 
+    /**
+     * on name form field change
+     * @param e ChangeEvent
+     */
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target
         setName(value)
@@ -42,6 +57,10 @@ function RequestPopup({
         setNameErrorMessage(validate.name(value))
     }
 
+    /**
+     * on email form field change
+     * @param e ChangeEvent
+     */
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target
         setEmail(value)
@@ -50,6 +69,10 @@ function RequestPopup({
         confirmEmail && setConfirmEmailErrorMessage(validate.confirmEmail(confirmEmail, value))
     }
 
+    /**
+     * on confirmEmail form field change
+     * @param e ChangeEvent
+     */
     const handleConfirmEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target
         setConfirmEmail(value)
@@ -57,18 +80,36 @@ function RequestPopup({
         setConfirmEmailErrorMessage(validate.confirmEmail(value, email))
     }
 
-    const resetFields = () => {
-        setName('')
-        setEmail('')
-        setConfirmEmail('')
+    /**
+     * validate the whole form
+     * @returns {ValidateResult} validate result
+     */
+    const validateAll = (): ValidateResult => {
+        const error = {
+            name: validate.name(name),
+            email: validate.email(email),
+            confirmEmail: validate.confirmEmail(email, confirmEmail),
+        }
+
+        setNameErrorMessage(error.name)
+        setEmailErrorMessage(error.email)
+        setConfirmEmailErrorMessage(error.confirmEmail)
+
+        const success = !error.name && !error.email && !error.confirmEmail
+
+        return { success, error }
     }
 
+    /**
+     * on tap send button
+     */
     const handleSend = async () => {
+
         setResponseErrorMessage('')
 
-        const valid = validateDone()
+        const { success } = validateAll()
 
-        if (valid) {
+        if (success) {
             setLoading(true)
 
             let result: ResResult
@@ -87,17 +128,30 @@ function RequestPopup({
             } else {
                 setResponseErrorMessage(errorMessage)
             }
+        } else {
+            // TODO: it's better to toast fail reason here
         }
-
     }
 
-    const validateDone = (): boolean => {
-        return !nameErrorMessage && !emailErrorMessage && !confirmEmailErrorMessage
-    }
-
+    /**
+     * on popup close
+     */
     const handleClose = () => {
         onClose && onClose()
         resetFields()
+    }
+
+    /**
+     * reset form fields and error messages
+     */
+    const resetFields = () => {
+        setName('')
+        setEmail('')
+        setConfirmEmail('')
+
+        setNameErrorMessage('')
+        setEmailErrorMessage('')
+        setConfirmEmailErrorMessage('')
     }
 
     return (

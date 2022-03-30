@@ -6,7 +6,7 @@ import { AxiosResponse } from 'axios'
  * @returns prototype
  */
 function getPrototype(val: any) {
-    return Object.prototype.toString.call(val);
+    return Object.prototype.toString.call(val)
 }
 
 /**
@@ -23,6 +23,9 @@ const validateEmail = (val: string): boolean => {
     return reg.test(val)
 }
 
+/**
+ * validate fileds Class
+ */
 export const validate = {
     name: (val: string): string => {
         if (!val) {
