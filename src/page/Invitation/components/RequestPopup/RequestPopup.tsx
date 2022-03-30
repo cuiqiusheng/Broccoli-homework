@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios, { AxiosResponse } from 'axios'
+import { ToastContainer, toast } from 'react-toastify'
 
 import Button from '@/components/Button'
 import Popup from '@/components/Popup'
 import InputField from '@/components/InputField'
 import { validate, handleRes, ResResult } from '@/utils'
 
+import 'react-toastify/dist/ReactToastify.css'
 import '@/page/Invitation/style.scss'
 
 const URL = 'https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth'
@@ -81,6 +83,42 @@ function RequestPopup({
     }
 
     /**
+     * on popup close
+     */
+    const handleClose = () => {
+        onClose && onClose()
+        resetFields()
+    }
+
+    /**
+     * reset form values and error messages
+     */
+    const resetFields = () => {
+        resetValues()
+        resetErrors()
+    }
+
+    /**
+     * reset form values
+     */
+    const resetValues = () => {
+        setName('')
+        setEmail('')
+        setConfirmEmail('')
+    }
+
+    /**
+     * reset error messages
+     */
+    const resetErrors = () => {
+        setNameErrorMessage('')
+        setEmailErrorMessage('')
+        setConfirmEmailErrorMessage('')
+
+        setResponseErrorMessage('')
+    }
+
+    /**
      * validate the whole form
      * @returns {ValidateResult} validate result
      */
@@ -105,7 +143,7 @@ function RequestPopup({
      */
     const handleSend = async () => {
 
-        setResponseErrorMessage('')
+        resetErrors()
 
         const { success } = validateAll()
 
@@ -129,31 +167,17 @@ function RequestPopup({
                 setResponseErrorMessage(errorMessage)
             }
         } else {
-            // TODO: it's better to toast fail reason here
+            toast('Please complete the form.', {
+                position: 'top-center',
+                autoClose: 1500,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                className: 'mini-toast',
+            })
         }
-    }
-
-    /**
-     * on popup close
-     */
-    const handleClose = () => {
-        onClose && onClose()
-        resetFields()
-    }
-
-    /**
-     * reset form fields and error messages
-     */
-    const resetFields = () => {
-        setName('')
-        setEmail('')
-        setConfirmEmail('')
-
-        setNameErrorMessage('')
-        setEmailErrorMessage('')
-        setConfirmEmailErrorMessage('')
-
-        setResponseErrorMessage('')
     }
 
     return (
@@ -191,6 +215,8 @@ function RequestPopup({
             </Button>
 
             { responseErrorMessage && <div className="response-error">{ responseErrorMessage }</div> }
+
+            <ToastContainer />
         </Popup>
     )
 }
