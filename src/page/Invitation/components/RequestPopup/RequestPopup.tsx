@@ -168,18 +168,21 @@ function RequestPopup({
                 placeholder="Full name"
                 errorMessage={nameErrorMessage}
                 value={name}
+                disabled={loading}
                 onChange={handleNameChange}
             />
             <InputField
                 placeholder="Email"
                 errorMessage={emailErrorMessage}
                 value={email}
+                disabled={loading}
                 onChange={handleEmailChange}
             />
             <InputField
                 placeholder="Confirm email"
                 errorMessage={confirmEmailErrorMessage}
                 value={confirmEmail}
+                disabled={loading}
                 onChange={handleConfirmEmailChange}
             />
 

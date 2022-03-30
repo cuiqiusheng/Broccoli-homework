@@ -31,8 +31,6 @@ function Button({
             default:
                 result += ' medium-button '
         }
-
-        if (disabled) result += ' disabled-button '
         
         return result
     }
@@ -46,7 +44,7 @@ function Button({
     }
 
     return (
-        <button className={`button ${getSizeClass()} ${className}`} onClick={handleClick}>
+        <button className={`${getSizeClass()} ${className}`} disabled={disabled} onClick={handleClick}>
             { children }
         </button>
     )

@@ -9,16 +9,24 @@
         outline: none;
     }
 
+    &:disabled {
+        border-color: $gray;
+        color: $gray;
+    }
+
     &::-webkit-input-placeholder {
-        color: #c1c1c1;
+        color: $gray;
     }
+
     &:-ms-input-placeholder { // IE10+
-        color: #c1c1c1;
+        color: $gray;
     }
+
     &:-moz-placeholder { // Firefox4-18
-        color: #c1c1c1;
+        color: $gray;
     }
+
     &::-moz-placeholder { // Firefox19+
-        color: #c1c1c1;
+        color: $gray;
     }
 }

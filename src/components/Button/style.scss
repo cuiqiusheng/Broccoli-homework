@@ -20,7 +20,8 @@
         padding: 4px 8px;
     }
 
-    &.disabled-button {
+    &:disabled,
+    &[disabled] {
         border: 1px solid $gray;
         color: $gray;
         cursor: not-allowed;
