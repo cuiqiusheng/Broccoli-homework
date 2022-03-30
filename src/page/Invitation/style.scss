@@ -1,6 +1,8 @@
 .content {
     @extend %flex-middle;
     height: calc(100% - $header-height - $footer-height);
+    min-height: 220px;
+    overflow-y: auto;
 
     .slogan,
     .subheading,
@@ -23,7 +25,7 @@
 
 .popup-body {
     width: 20%;
-    min-width: 200px;
+    min-width: 300px;
 
     .popup-title {
         position: relative;
@@ -47,9 +49,17 @@
         }
     }
 
+    .popup-tip: {
+        text-align: center;
+    }
+
     .send-button {
         width: 100%;
         margin-top: 32px;
         margin-bottom: 32px;
+    }
+
+    .response-error {
+        color: $error;
     }
 }

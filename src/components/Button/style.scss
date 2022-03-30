@@ -19,4 +19,10 @@
     &.small-button {
         padding: 4px 8px;
     }
+
+    &.disabled-button {
+        border: 1px solid $gray;
+        color: $gray;
+        cursor: not-allowed;
+    }
 }

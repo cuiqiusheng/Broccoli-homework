@@ -9,17 +9,15 @@ interface InputFieldProps extends InputProps {
 }
 
 function InputField({
-    className,
-    placeholder,
-    disabled,
     errorMessage,
+    className,
+    ...inputProps
 }: InputFieldProps) {
     return (
         <div className="input-field">
             <Input
-                className={`input-block ${className}`}
-                placeholder={placeholder}
-                disabled={disabled}
+                className={`input-block ${errorMessage ? 'error-input' : ''} ${className}`}
+                { ...inputProps }
             />
             <div className="error-message">{ errorMessage }</div>
         </div>

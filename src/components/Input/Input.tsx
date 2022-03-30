@@ -3,9 +3,11 @@ import React from 'react'
 import './style.scss'
 
 export interface InputProps {
-    placeholder?: string
-    disabled?: boolean
     className?: string
+    placeholder?: string
+    value?: string
+    disabled?: boolean
+    onChange?: undefined | ((event: React.ChangeEvent<HTMLInputElement>) => void),
 }
 
 export const defaultProps = {
@@ -14,15 +16,19 @@ export const defaultProps = {
 }
 
 function Input({
+    className,
     placeholder,
+    value,
     disabled,
-    className
+    onChange,
 }: InputProps) {
     return (
         <input
             className={`input ${className}`}
             placeholder={placeholder || defaultProps.placeholder}
+            value={value}
             disabled={disabled}
+            onChange={onChange}
         />
     )
 }

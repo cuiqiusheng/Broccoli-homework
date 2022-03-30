@@ -26,9 +26,19 @@ function Button({
     };
 
     const getSizeClass = () => {
-        if (size === 'large') return 'large-button'
-        if (size === 'small') return 'small-button'
-        return 'medium-button'
+        let result = 'button '
+
+        if (disabled) result += ' disabled-button '
+
+        if (size === 'large') {
+            result += ' large-button '
+        } else if (size === 'small') {
+            result += ' small-button '
+        } else {
+            result += ' medium-button '
+        }
+        
+        return result
     }
 
     return (

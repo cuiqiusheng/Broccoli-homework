@@ -5,6 +5,10 @@
         display: block;
         width: 100%;
     }
+
+    .error-input {
+        border: 1px solid $error;
+    }
     
     .error-message {
         color: $error;
