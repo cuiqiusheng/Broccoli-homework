@@ -11,6 +11,10 @@
 
 > Always believe yourself 😊
 
+## 访问地址
+
+线上（http://47.93.86.230/invitation）：[点这里](http://47.93.86.230/invitation)
+
 ## 目录结构
 
 ```
