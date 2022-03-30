@@ -152,6 +152,8 @@ function RequestPopup({
         setNameErrorMessage('')
         setEmailErrorMessage('')
         setConfirmEmailErrorMessage('')
+
+        setResponseErrorMessage('')
     }
 
     return (
