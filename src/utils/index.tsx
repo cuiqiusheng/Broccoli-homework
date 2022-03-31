@@ -31,6 +31,7 @@ export const validate = {
         if (!val) {
             return 'Full name is required.'
         } else {
+            if (val.length < 3) return 'Need 3 charactors at least.'
             return ''
         }
     },
