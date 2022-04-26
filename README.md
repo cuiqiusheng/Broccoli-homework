@@ -62,3 +62,4 @@ $ yarn build
 ## TODO
 
 - [ ] 通过 webpack dll 提高编译速度
+- [ ] CI/CD
