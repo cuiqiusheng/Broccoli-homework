@@ -1,9 +1,13 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
-        <Navigate to="/invitation" replace />
+        <>
+            <div>这里是首页</div>
+            <br />
+            <Link to="/invitation">to invitation</Link>
+        </>
     )
 }
 
